@@ -214,10 +214,11 @@
            
             switch(game.senceNumber){
                 case 0:
-                if(e.clientX>(this.canvasWidth-game.R["button_play"].width)/2&&
-                e.clientX<(this.canvasWidth-game.R["button_play"].width)/2+game.R["button_play"].width&&
+                console.log(game.canvas.offsetLeft)
+                if(e.clientX-game.canvas.offsetLeft>(this.canvasWidth-116)/2&&
+                e.clientX<(this.canvasWidth-116)/2+116+game.canvas.offsetLeft&&
                 e.clientY>this.buttonY&&
-                e.clientY<this.buttonY+game.R["button_play"].height){
+                e.clientY<this.buttonY+70){
                     this.enter(1)//进入第二个新手教学场景
                 }
                 break;
