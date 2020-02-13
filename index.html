@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flybird</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <audio class="die" src="./music/sfx_die.ogg"></audio>
+    <audio class="hit" src="./music/sfx_hit.ogg"></audio>
+    <audio class="point" src="./music/sfx_point.ogg"></audio>
+    <audio class="swooshing" src="./music/sfx_swooshing.ogg"></audio>
+    <audio class="wing" src="./music/sfx_wing.ogg"></audio>
+    <canvas width=420>
+       <h2>该浏览器不支持canvas</h2>
+    </canvas>
+    <script src = "./js/progress.js"></script>
+    <script src="./js/background.js"></script>
+    <script src="./js/land.js"></script>
+    <script src="./js/pipe.js"></script>
+    <script src="./js/bird.js"></script>
+    <script src="./js/senceManage.js"></script>
+    <script src="./js/game.js"></script>
+    <script>
+       var game = new Game();
+    </script>
+</body>
+</html>

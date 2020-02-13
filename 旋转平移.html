@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       canvas{
+           border:1px solid red;
+       }
+    
+    </style>
+</head>
+<body>
+    <canvas width=800 height=400>该浏览器不支持canvas</canvas>
+    <script>
+      var canvas = document.getElementsByTagName("canvas")[0];
+      if(canvas.getContext){
+          var ctx = canvas.getContext("2d");
+          let move = new Move(100,100,100,100);
+          setInterval(()=>{
+             
+              move.update();
+              move.render();
+          },1000/60)
+          function Move(x,y,w,h){
+             this.x = x;
+             this.y = y;
+             this.w = w;
+             this.h = h;
+             this.rotate = 0;
+             this.mx = 1;
+          }
+          Move.prototype.update=function(){
+              this.x+=this.mx;
+              this.rotate += 0.1;
+              console.log(this.x)
+              if(this.x>700){
+                 this.mx = -1
+              }
+              if(this.x<100){
+                  this.mx = 1;
+              }
+          }
+          Move.prototype.render=function(){
+               ctx.clearRect(0,0,canvas.width,canvas.height)
+               ctx.save();
+               ctx.fillStyle = "pink";
+               ctx.translate(this.x,100);
+               ctx.rotate(this.rotate)
+               ctx.fillRect(-this.w/2,-this.w/2,this.w,this.h) 
+               ctx.restore();
+          }
+      }
+    </script>
+</body>
+</html>
