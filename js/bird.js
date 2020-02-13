@@ -37,7 +37,9 @@
         this.rotate = -1;
         this.changeY=6;
         document.getElementsByClassName("wing")[0].load();
-        document.getElementsByClassName("wing")[0].play();
+        if(document.getElementsByClassName("wing")[0].play()!==undefined){
+            document.getElementsByClassName("wing")[0].play()
+        };
     }
     Bird.prototype.render = function () {
         game.ctx.save();
